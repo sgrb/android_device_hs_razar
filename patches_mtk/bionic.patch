@@ -29,7 +29,7 @@ diff --git a/libc/bionic/ndk_cruft.cpp b/libc/bionic/ndk_cruft.cpp
 index 3ac88f867..602adb434 100644
 --- a/libc/bionic/ndk_cruft.cpp
 +++ b/libc/bionic/ndk_cruft.cpp
-@@ -340,10 +340,17 @@ size_t dlmalloc_usable_size(void* ptr) {
+@@ -340,10 +340,15 @@ size_t dlmalloc_usable_size(void* ptr) {
  }
  
  // In L we added a public pthread_gettid_np, but some apps were using the private API.

@@ -1,36 +1,43 @@
 #!/bin/bash
+
+set -ex
+
+apply() {
+    git reset --hard && git clean -fd && git apply $1
+}
+
 cd ../../../..
 cd system/core
-git apply -v ../../device/hs/razar/patches_mtk/system_core.patch
+apply  ../../device/hs/razar/patches_mtk/system_core.patch
 cd ../..
 cd bionic
-git apply -v ../device/hs/razar/patches_mtk/bionic.patch
+apply  ../device/hs/razar/patches_mtk/bionic.patch
 cd ..
 cd system/sepolicy
-git apply -v ../../device/hs/razar/patches_mtk/system_sepolicy.patch
+apply  ../../device/hs/razar/patches_mtk/system_sepolicy.patch
 cd ../..
 cd frameworks/av
-git apply -v ../../device/hs/razar/patches_mtk/frameworks_av.patch
+apply  ../../device/hs/razar/patches_mtk/frameworks_av.patch
 cd ..
 cd native
-git apply -v ../../device/hs/razar/patches_mtk/frameworks_native.patch
+apply  ../../device/hs/razar/patches_mtk/frameworks_native.patch
 cd ..
 cd base
-git apply -v ../../device/hs/razar/patches_mtk/frameworks_base.patch
+apply  ../../device/hs/razar/patches_mtk/frameworks_base.patch
 cd ..
 cd opt/telephony
-git apply -v ../../../device/hs/razar/patches_mtk/frameworks_opt_telephony.patch
+apply  ../../../device/hs/razar/patches_mtk/frameworks_opt_telephony.patch
 cd ../../..
 cd packages/apps/Snap
-git apply -v ../../../device/hs/razar/patches_mtk/snap.patch
+apply  ../../../device/hs/razar/patches_mtk/snap.patch
 cd ..
 cd FMRadio
-git apply -v ../../../device/hs/razar/patches_mtk/fmradio.patch
+apply  ../../../device/hs/razar/patches_mtk/fmradio.patch
 cd ../../..
 cd system/netd
-git apply -v ../../device/hs/razar/patches_mtk/system_netd.patch
+apply  ../../device/hs/razar/patches_mtk/system_netd.patch
 cd ../..
 cd vendor/cmsdk
-git apply -v ../../device/hs/razar/patches_mtk/vendor_cmsdk.patch
+apply  ../../device/hs/razar/patches_mtk/vendor_cmsdk.patch
 cd ../..
 
